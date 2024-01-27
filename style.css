@@ -1,0 +1,18 @@
+body {
+  color: #fff;
+  background-color: #222;
+  padding: 8px;
+}
+
+.enlaces {
+  color: #fff;
+
+  a {
+    padding: 4px;
+  }
+
+  a:hover {
+    /* border: 2px solid #fff; */
+    outline: 2px solid gold;
+  }
+}
