@@ -1,7 +1,14 @@
 body {
-  color: #fff;
-  background-color: #222;
-  padding: 8px;
+  /* color: #fff; */
+  background-color: #09f;
+  /* margin: 100px auto; */
+  width: 100%;
+  /* height: 100vh; */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .enlaces {
@@ -14,5 +21,64 @@ body {
   a:hover {
     /* border: 2px solid #fff; */
     outline: 2px solid gold;
+  }
+}
+
+section.container {
+  background-color: #fff;
+  width: 140px;
+  height: 160px;
+
+  box-sizing: border-box;
+  font-size: 48px;
+  overflow: auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  /* Se queda fija en referencia a la pantall */
+  position: fixed;
+  left: 20px;
+  top: 0;
+
+  /* display: none; */
+}
+
+/* display */
+.father-1 {
+  border: 5px solid #ccc;
+  border-color: #000;
+  width: 250px;
+  height: 500px;
+  box-sizing: border-box;
+  position: relative;
+
+  .container {
+    background-color: #fff;
+    width: 100px;
+    height: 100px;
+
+    /* Centrar div */
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    position: sticky;
+  }
+}
+
+.father-2 {
+  border: 5px solid #ccc;
+  border-color: #000;
+  width: 250px;
+  height: 500px;
+  box-sizing: border-box;
+  position: relative;
+
+  .container {
+    background-color: #fff;
+    width: 100px;
+    height: 100px;
+
+    position: sticky;
+    top: 0;
   }
 }
