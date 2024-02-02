@@ -1,0 +1,56 @@
+body {
+  background-color: rgb(66, 66, 66);
+  display: grid;
+  place-content: center;
+  height: 100vh;
+}
+
+.parent {
+  box-sizing: content-box;
+}
+
+.parent {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  /* writing-mode: vertical-lr; */
+
+  border: 5px solid #ccc;
+  width: 250px;
+
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.item {
+  border: 1px solid;
+  opacity: 0.9;
+  width: 100px;
+  height: 100px;
+
+  box-sizing: border-box;
+
+  /* valores por defecto */
+  flex-grow: 0; /* Los elementos NO crece */
+  flex-shrink: 1; /* Los elementos pueden reducir su tamaño a uno mas pequeño que su flex-basis */
+  flex-basis: auto; /* los elementos tienen un tamaño base en automatico */
+}
+
+.item:nth-child(1) {
+  background-color: #09f;
+  flex: 1;
+  order: 3;
+}
+
+.item:nth-child(2) {
+  background-color: yellow;
+  flex: 2;
+  order: 1;
+}
+
+.item:nth-child(3) {
+  background-color: red;
+  flex-grow: 1;
+  flex: 1;
+  order: 2;
+}
