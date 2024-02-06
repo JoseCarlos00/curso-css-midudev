@@ -1,0 +1,65 @@
+body {
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+    Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body > .pulser:hover {
+  scale: 2;
+  background-color: red;
+  box-shadow: 0 0 10px red;
+}
+
+.pulser {
+  width: 50px;
+  height: 50px;
+  background-color: #09f;
+  border-radius: 50%;
+  position: relative;
+
+  transition: background 300ms linear, scale 500ms ease-in-out;
+}
+
+section {
+  background-color: #ccc;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+
+  .pulser {
+    width: 50px;
+    height: 50px;
+    background-color: #09f;
+    border-radius: 50%;
+    position: relative;
+    transition-duration: 1s;
+    transition-property: bacground, scale, opacity;
+    transition-timing-function: ease-in; /* Al principio va mas lento y despues mas rapido*/
+    transition-timing-function: ease-out; /* Inicia a toda velosidad y despues va mas lento*/
+    transition-timing-function: ease-in-out; /* En la entrada y salida va con calma y en el medio va rapido*/
+    transition-timing-function: ease; /* Parecido al 'in-out' pero comieza ligeramente mas rapido */
+
+    /* transition-timing-function: steps(5); Indica en cuantos pasos tiene que hacer la transition */
+    /* transition-delay: 0.5s; */
+    opacity: 0;
+  }
+
+  .pulser:nth-child(1) {
+    transition-delay: 0;
+  }
+
+  .pulser:nth-child(2) {
+    transition-delay: 0.3s;
+  }
+
+  .pulser:nth-child(3) {
+    transition-delay: 0.6s;
+  }
+}
+
+section:hover .pulser {
+  opacity: 1;
+}
