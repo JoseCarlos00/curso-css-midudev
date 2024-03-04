@@ -1,0 +1,28 @@
+body {
+  margin: 0;
+}
+
+#progress {
+  position: fixed;
+  top: 0;
+  width: 0%;
+  background-color: red;
+  height: 1em;
+
+  animation: progress-grow auto linear;
+  animation-timeline: scroll(root);
+}
+
+main {
+  width: 350px;
+  margin: 0 auto;
+}
+
+@keyframes progress-grow {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}

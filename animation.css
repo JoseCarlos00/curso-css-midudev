@@ -6,10 +6,13 @@ body {
     Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-body > .pulser:hover {
-  scale: 2;
-  background-color: red;
-  box-shadow: 0 0 10px red;
+p.text {
+  cursor: wait;
+  background-color: currentColor;
+  width: fit-content;
+  opacity: 0.5;
+
+  animation: wait 2s infinite ease-in-out;
 }
 
 .pulser {
@@ -22,7 +25,34 @@ body > .pulser:hover {
   transition: background 300ms linear, scale 500ms ease-in-out;
 }
 
-section {
+.primer-section {
+  position: relative;
+  margin: 60px 0;
+  /* animation: move 2s infinite; */
+
+  /* .pulser:hover {
+    scale: 2;
+    background-color: red;
+    box-shadow: 0 0 10px red;
+  } */
+
+  .pulser::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #09f;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    animation: pulse 2s ease-in-out infinite;
+    animation-delay: 3s;
+  }
+}
+
+.section {
   background-color: #ccc;
   display: flex;
   gap: 16px;
@@ -58,8 +88,39 @@ section {
   .pulser:nth-child(3) {
     transition-delay: 0.6s;
   }
+
+  &:hover .pulser {
+    opacity: 1;
+  }
 }
 
-section:hover .pulser {
-  opacity: 1;
+@keyframes move {
+  from {
+    transform: translateX(0px);
+  }
+
+  to {
+    transform: translateX(100px);
+  }
+}
+
+@keyframes wait {
+  50% {
+    opacity: 0.2;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    scale: 1.5;
+    opacity: 0.4;
+  }
+
+  100% {
+    opacity: 0.6;
+  }
 }
